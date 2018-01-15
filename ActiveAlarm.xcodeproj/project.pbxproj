@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F9A494ED200C655C00C1E899 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A494EC200C655C00C1E899 /* AlarmViewController.swift */; };
+		F9A494F1200CFB6C00C1E899 /* analog_watch.wav in Resources */ = {isa = PBXBuildFile; fileRef = F9A494F0200CFB6C00C1E899 /* analog_watch.wav */; };
 		F9E92C4A200C38D900F4A546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E92C49200C38D900F4A546 /* AppDelegate.swift */; };
 		F9E92C4C200C38D900F4A546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E92C4B200C38D900F4A546 /* ViewController.swift */; };
 		F9E92C4F200C38D900F4A546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9E92C4D200C38D900F4A546 /* Main.storyboard */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F9A494EC200C655C00C1E899 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		F9A494F0200CFB6C00C1E899 /* analog_watch.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = analog_watch.wav; sourceTree = "<group>"; };
 		F9E92C46200C38D900F4A546 /* ActiveAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ActiveAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9E92C49200C38D900F4A546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9E92C4B200C38D900F4A546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 		F9E92C3D200C38D900F4A546 = {
 			isa = PBXGroup;
 			children = (
+				F9A494F0200CFB6C00C1E899 /* analog_watch.wav */,
 				F9E92C48200C38D900F4A546 /* ActiveAlarm */,
 				F9E92C5D200C38DA00F4A546 /* ActiveAlarmTests */,
 				F9E92C68200C38DA00F4A546 /* ActiveAlarmUITests */,
@@ -99,6 +104,7 @@
 		F9E92C48200C38D900F4A546 /* ActiveAlarm */ = {
 			isa = PBXGroup;
 			children = (
+				F9A494EC200C655C00C1E899 /* AlarmViewController.swift */,
 				F9E92C49200C38D900F4A546 /* AppDelegate.swift */,
 				F9E92C4B200C38D900F4A546 /* ViewController.swift */,
 				F9E92C77200C3F6500F4A546 /* pedometerViewController.swift */,
@@ -237,6 +243,7 @@
 			files = (
 				F9E92C54200C38D900F4A546 /* LaunchScreen.storyboard in Resources */,
 				F9E92C51200C38D900F4A546 /* Assets.xcassets in Resources */,
+				F9A494F1200CFB6C00C1E899 /* analog_watch.wav in Resources */,
 				F9E92C4F200C38D900F4A546 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A494ED200C655C00C1E899 /* AlarmViewController.swift in Sources */,
 				F9E92C78200C3F6500F4A546 /* pedometerViewController.swift in Sources */,
 				F9E92C4C200C38D900F4A546 /* ViewController.swift in Sources */,
 				F9E92C4A200C38D900F4A546 /* AppDelegate.swift in Sources */,
