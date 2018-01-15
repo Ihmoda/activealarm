@@ -14,8 +14,10 @@ class ViewController: UIViewController {
     
     var timer = Timer()
     var seconds = 60
+    var tolerance: Double = 1.0
     
     @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var thresholdSlider: UISlider!
     
     
     override func viewDidLoad() {
@@ -31,8 +33,7 @@ class ViewController: UIViewController {
             print("We cannot detect device motion")
         }
     }
-    
-    
+
     func runTimer() {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self,   selector: (#selector(ViewController.updateLabel)), userInfo: nil, repeats: true)
     }
@@ -41,7 +42,7 @@ class ViewController: UIViewController {
         self.counterLabel.text = String(counter)
     }
     
-    func startReadingMotionData() {
+   func startReadingMotionData() {
         // set read speed
         motionManager.deviceMotionUpdateInterval = 0.02
         // start reading
@@ -57,22 +58,22 @@ class ViewController: UIViewController {
                     self.left = false
                     self.right = false
                 }
-                if x < -1.0 {
+                if x < -self.tolerance {
                     self.left = true
-                } else if y > 1.0 {
+                } else if y > self.tolerance {
                     self.right = true
                 }
-                
-                
             }
-            
-            
         }
     }
     
     
     func degrees(_ radians: Double) -> Double {
         return 180/Double.pi * radians
+    }
+    
+    @IBAction func sliderChanged(_ sender: UISlider) {
+        tolerance = Double(1.0 + sender.value)
     }
     
 }
