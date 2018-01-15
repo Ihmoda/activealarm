@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     func startReadingMotionData() {
-        // set read speed
+        // set read velocity
         motionManager.deviceMotionUpdateInterval = 0.02
         // start reading
         motionManager.startDeviceMotionUpdates(to: opQueue) {
