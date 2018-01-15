@@ -431,10 +431,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K453BMNZ9;
+				DEVELOPMENT_TEAM = 7S6V5Z4QGC;
 				INFOPLIST_FILE = ActiveAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.activealarm.ActiveAlarmJeff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.activealarm.ActiveAlarmJeffOMar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -446,10 +446,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9K453BMNZ9;
+				DEVELOPMENT_TEAM = 7S6V5Z4QGC;
 				INFOPLIST_FILE = ActiveAlarm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.activealarm.ActiveAlarmJeff;
+				PRODUCT_BUNDLE_IDENTIFIER = com.activealarm.ActiveAlarmJeffOMar2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
