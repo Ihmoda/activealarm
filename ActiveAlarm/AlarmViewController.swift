@@ -19,7 +19,7 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     var pickerData = ["Shake", "Walk"]
     var selectedActivity: String = ""
 
-    var switchView = "walk"
+    var switchView = "Walk"
     var shakePageVC = ViewController()
     private var notification: NSObjectProtocol?
     
@@ -33,14 +33,7 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
         UNUserNotificationCenter.current().delegate = self
         self.activityPicker.delegate = self
         self.activityPicker.dataSource = self
-        
-        if switchView == "shake" {
-            present(shakePageVC, animated: true, completion: nil)
-            performSegue(withIdentifier: "shakePage", sender: nil)
-            print("test")
-        } else if switchView == "walk" {
-            performSegue(withIdentifier: "walkPage", sender: self)
-        }
+    
         
         // Do any additional setup after loading the view.
     
@@ -90,8 +83,13 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        print("Test: \(response.notification.request.identifier)")
-        
+        self.switchView = response.notification.request.identifier
+        print(response.notification.request.identifier)
+        if switchView == "Shake" {
+            performSegue(withIdentifier: "shakePage", sender: nil)
+        } else if switchView == "Walk" {
+            performSegue(withIdentifier: "walkPage", sender: self)
+        }
         
         completionHandler()
     }
