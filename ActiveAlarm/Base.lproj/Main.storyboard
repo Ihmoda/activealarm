@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="P8Z-eG-UTK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qxz-OJ-LaD">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93.599999999999994" y="117.39130434782609"/>
+            <point key="canvasLocation" x="-820" y="116"/>
         </scene>
         <!--Pedometer View Controller-->
         <scene sceneID="S6K-Zm-V4a">
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASz-jR-lMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.60000000000002" y="116.49175412293854"/>
+            <point key="canvasLocation" x="1360.8" y="115.59220389805098"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="kPg-VZ-77s">
@@ -169,16 +169,18 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sau-vo-qRr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-ec-bLT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="301.5"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-Zi-grg">
-                                        <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
+                                        <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-WQ-0jF">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
+
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="259.5"/>
+
                                                 <date key="date" timeIntervalSinceReferenceDate="537756956.06434798">
                                                     <!--2018-01-16 00:55:56 +0000-->
                                                 </date>
@@ -187,7 +189,9 @@
                                                 <rect key="frame" x="0.0" y="153" width="375" height="148"/>
                                             </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-Fp-rH9">
-                                                <rect key="frame" x="0.0" y="306" width="375" height="17.5"/>
+
+                                                <rect key="frame" x="0.0" y="264.5" width="375" height="37"/>
+
                                                 <state key="normal" title="Set Alarm"/>
                                                 <connections>
                                                     <action selector="setAlarmPressed:" destination="P8Z-eG-UTK" eventType="touchUpInside" id="biN-En-aUK"/>
@@ -214,14 +218,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HuV-ws-8mS"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TXz-uW-u47"/>
                     <connections>
                         <outlet property="activityPicker" destination="z8w-Sd-SuD" id="YQ1-WF-sG9"/>
                         <outlet property="datePicker" destination="4Cc-WQ-0jF" id="LNE-zu-qFf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="shakePage" id="Wmz-GY-lqP"/>
+                        <segue destination="2YU-kp-PTL" kind="show" identifier="walkPage" id="VsS-81-9Mn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sph-iA-cWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1808.8" y="116.49175412293854"/>
+            <point key="canvasLocation" x="500" y="115.59220389805098"/>
         </scene>
         <!--Squat View Controller-->
         <scene sceneID="HpX-HO-50y">
@@ -236,7 +243,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5F-0Z-EXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2614" y="117"/>
+            <point key="canvasLocation" x="1964" y="116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="51l-1a-gBg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qxz-OJ-LaD" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="znW-uW-4GQ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="P8Z-eG-UTK" kind="relationship" relationship="rootViewController" id="LCb-yy-UY1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5lq-Vf-O05" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="844"/>
         </scene>
     </scenes>
     <resources>

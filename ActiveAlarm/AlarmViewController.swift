@@ -18,7 +18,9 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     var dateComponents = DateComponents()
     var pickerData = ["Shake", "Walk"]
     var selectedActivity: String = ""
-    
+
+    var switchView = "walk"
+    var shakePageVC = ViewController()
     private var notification: NSObjectProtocol?
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -29,11 +31,21 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
         super.viewDidLoad()
         self.registerLocal()
         UNUserNotificationCenter.current().delegate = self
-        
         self.activityPicker.delegate = self
         self.activityPicker.dataSource = self
         
+        if switchView == "shake" {
+            present(shakePageVC, animated: true, completion: nil)
+            performSegue(withIdentifier: "shakePage", sender: nil)
+            print("test")
+        } else if switchView == "walk" {
+            performSegue(withIdentifier: "walkPage", sender: self)
+        }
+        
+        // Do any additional setup after loading the view.
+    
     }
+
     
     // The number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -69,6 +81,7 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
         let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,7 +125,20 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
        self.setAlarm()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shakePage" {
+            
+            let shakeVC = segue.destination as! ViewController
+            shakeVC.passedInFromAlarm = "I'm from the alarm page"
+            
+        }
+        else if segue.identifier == "walkPage" {
+            
+            let walkVC = segue.destination as! pedometerViewController
+            walkVC.passedInFromAlarm = "Woohoo!"
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
