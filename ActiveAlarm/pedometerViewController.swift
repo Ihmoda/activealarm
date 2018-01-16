@@ -9,9 +9,10 @@
 import UIKit
 import CoreMotion
 
+
 class pedometerViewController: UIViewController {
     
-    
+    var delegate : TurnAlarmOff?
     var numberOfSteps = 0
     let pedometer = CMPedometer()
     
@@ -43,6 +44,14 @@ class pedometerViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func checkIfRequirementMet() {
+        if numberOfSteps == 30 {
+            delegate?.AlarmOff(yesOrNo: true)
+            self.numberOfSteps = 0
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
     func startReadingPedometerData(){
         pedometer.startUpdates(from: Date(), withHandler: { (pedometerData, error) in
             if let pedData = pedometerData{
@@ -58,6 +67,7 @@ class pedometerViewController: UIViewController {
     
     @objc func updateLabel(){
         self.stepCounterLabel.text = String(self.numberOfSteps)
+        self.checkIfRequirementMet() // Checks to see if user has completed x number of steps
     }
     
     override func didReceiveMemoryWarning() {

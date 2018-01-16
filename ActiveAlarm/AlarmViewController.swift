@@ -11,11 +11,14 @@ import UserNotifications
 
 
 
-class AlarmViewController: UIViewController {
+class AlarmViewController: UIViewController, TurnAlarmOff {
     let content = UNMutableNotificationContent()
     var dateComponents = DateComponents()
-    var switchView = "walk"
+    var switchView = "walk" // Determines whether to load walk or shake page on startup
     var shakePageVC = ViewController()
+    
+    // True/False taken from ViewController (Shake logic) or pedometerViewController
+    var alarmOff = false
 
     private var notification: NSObjectProtocol?
     
@@ -28,7 +31,6 @@ class AlarmViewController: UIViewController {
         self.registerLocal()
         
         if switchView == "shake" {
-            present(shakePageVC, animated: true, completion: nil)
             performSegue(withIdentifier: "shakePage", sender: nil)
             print("test")
         } else if switchView == "walk" {
@@ -110,6 +112,7 @@ class AlarmViewController: UIViewController {
             
             let shakeVC = segue.destination as! ViewController
             shakeVC.passedInFromAlarm = "I'm from the alarm page"
+            shakeVC.delegate = self
             
         }
         else if segue.identifier == "walkPage" {
@@ -118,6 +121,13 @@ class AlarmViewController: UIViewController {
             walkVC.passedInFromAlarm = "Woohoo!"
             
         }
+    }
+    
+    func AlarmOff(yesOrNo: Bool) {
+        // This function is needed to conform to the protocol TurnAlarmOff
+        // as defined in ViewController and pedometerViewController
+        self.alarmOff = true
+        print("alarmOff is set to true")
     }
 
     /*
