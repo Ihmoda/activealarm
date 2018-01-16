@@ -17,18 +17,20 @@ class SquatViewController: UIViewController {
     
     var date = NSDate()
     
-    var right = false
-    var left = false
+    let sampleInterval = 1.0/50
+    
+    var up = false
+    var down = false
     var counter = 0
     
     var timer = Timer()
     var seconds = 60
     var tolerance: Double = 1.0
     
+    var rateAlongGravityBuffer = [Double]()
+    
     @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var thresholdSlider: UISlider!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print(date)
@@ -59,19 +61,21 @@ class SquatViewController: UIViewController {
             (data: CMDeviceMotion?, error: Error?) in
             
             if let mydata = data {
-                let x = mydata.userAcceleration.x
-                let y = mydata.userAcceleration.y
-                if self.left && self.right {
+                let gravity = mydata.gravity
+                let rotationRate = mydata.rotationRate
+                
+                let rateAlongGravity = rotationRate.x * gravity.x + rotationRate.y * gravity.y + rotationRate.z * gravity.z
+                if self.down && self.up {
                     self.counter += 1
                     print(self.counter)
-                    self.left = false
-                    self.right = false
+                    self.down = false
+                    self.up = false
                 }
-                if x < -self.tolerance {
-                    self.left = true
-                } else if y > self.tolerance {
-                    self.right = true
-                }
+//                if x < -self.tolerance {
+//                    self.down = true
+//                } else if y > self.tolerance {
+//                    self.up = true
+//                }
             }
         }
     }

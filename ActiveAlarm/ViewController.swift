@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     var seconds = 60
     var tolerance: Double = 1.0
     
+    var passedInFromAlarm = ""
+    
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var thresholdSlider: UISlider!
     
@@ -32,6 +34,9 @@ class ViewController: UIViewController {
         else {
             print("We cannot detect device motion")
         }
+        
+        print(passedInFromAlarm)
+        
     }
 
     func runTimer() {

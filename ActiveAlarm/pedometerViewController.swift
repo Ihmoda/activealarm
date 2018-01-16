@@ -20,6 +20,8 @@ class pedometerViewController: UIViewController {
     var timeElapsed:TimeInterval = 0.0
     var stepcounting = false
     
+    var passedInFromAlarm = ""
+    
     
     @IBOutlet weak var stepCounterLabel: UILabel!
     
@@ -35,6 +37,8 @@ class pedometerViewController: UIViewController {
         else {
             print("We cannot detect steps")
         }
+        
+        print(passedInFromAlarm)
 
         // Do any additional setup after loading the view.
     }
