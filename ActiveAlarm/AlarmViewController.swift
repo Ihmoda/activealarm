@@ -18,31 +18,17 @@ class AlarmViewController: UIViewController {
     private var notification: NSObjectProtocol?
     
     
-    @IBOutlet weak var amPMSwitch: UISwitch!
-    
-    @IBOutlet weak var hourTextField: UITextField!
-    
-    
-    @IBOutlet weak var minuteTextField: UITextField!
-    
+    @IBOutlet weak var datePicker: UIDatePicker!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerLocal()
         
-        notification = NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: .main) {
-            [unowned self] notification in
-            print("Notification Received")
-        }
         // Do any additional setup after loading the view.
     }
         
-        deinit {
-            if let notification = notification {
-                NotificationCenter.default.removeObserver(notification)
-            }
-        }
-    
+
     func setAlarm(){
         print("setAlarm")
         let content = UNMutableNotificationContent()
@@ -82,22 +68,30 @@ class AlarmViewController: UIViewController {
     
     
     @IBAction func setAlarmPressed(_ sender: UIButton) {
+        print("Hit")
         
-        print(amPMSwitch.isOn)
-    
-        if let hour = hourTextField.text {
-            if !amPMSwitch.isOn {
-                dateComponents.hour = Int(hour)
-            } else {
-                dateComponents.hour = Int(hour)! + 12
-            }
-        }
+        let calendar = Calendar.current
+        let date = datePicker.date
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        //print(amPMSwitch.isOn)
+
+//        if let hour = datePicker.date {
+//            if !amPMSwitch.isOn {
+//                dateComponents.hour = Int(hour)
+//            } else {
+//                dateComponents.hour = Int(hour)! + 12
+//            }
+//        }
+//
+//        if let minute = minuteTextField.text {
+//            dateComponents.minute = Int(minute)
+//        }
+        dateComponents.hour = hour
+        dateComponents.minute = minute
         
-        if let minute = minuteTextField.text {
-            dateComponents.minute = Int(minute)
-        }
-        
-       print(dateComponents)
+       print(dateComponents.hour)
+       print(dateComponents.minute)
        self.setAlarm()
     }
     
