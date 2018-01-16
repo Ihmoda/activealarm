@@ -14,7 +14,9 @@ import UserNotifications
 class AlarmViewController: UIViewController {
     let content = UNMutableNotificationContent()
     var dateComponents = DateComponents()
-    
+    var switchView = "walk"
+    var shakePageVC = ViewController()
+
     private var notification: NSObjectProtocol?
     
     
@@ -24,6 +26,14 @@ class AlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerLocal()
+        
+        if switchView == "shake" {
+            present(shakePageVC, animated: true, completion: nil)
+            performSegue(withIdentifier: "shakePage", sender: nil)
+            print("test")
+        } else if switchView == "walk" {
+            performSegue(withIdentifier: "walkPage", sender: self)
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -95,7 +105,20 @@ class AlarmViewController: UIViewController {
        self.setAlarm()
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "shakePage" {
+            
+            let shakeVC = segue.destination as! ViewController
+            shakeVC.passedInFromAlarm = "I'm from the alarm page"
+            
+        }
+        else if segue.identifier == "walkPage" {
+            
+            let walkVC = segue.destination as! pedometerViewController
+            walkVC.passedInFromAlarm = "Woohoo!"
+            
+        }
+    }
 
     /*
     // MARK: - Navigation
