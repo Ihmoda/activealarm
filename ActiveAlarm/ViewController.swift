@@ -1,7 +1,16 @@
 import UIKit
 import CoreMotion
 
+protocol TurnAlarmOff {
+    // Passes bool to AlarmViewController to switch off alarm
+    
+    func AlarmOff(yesOrNo: Bool)
+    
+}
+
 class ViewController: UIViewController {
+    
+    var delegate : TurnAlarmOff?
     
     var motionManager = CMMotionManager()
     let opQueue = OperationQueue()
@@ -47,7 +56,16 @@ class ViewController: UIViewController {
         self.counterLabel.text = String(counter)
     }
     
-   func startReadingMotionData() {
+    func checkIfRequirementMet() {
+        // Dismissed view after a certain number of shakes
+        if counter == 30 {
+            delegate?.AlarmOff(yesOrNo: true)
+            self.counter = 0
+            dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func startReadingMotionData() {
         // set read speed
         motionManager.deviceMotionUpdateInterval = 0.02
         // start reading
@@ -62,6 +80,7 @@ class ViewController: UIViewController {
                     print(self.counter)
                     self.left = false
                     self.right = false
+                    self.checkIfRequirementMet()
                 }
                 if x < -self.tolerance {
                     self.left = true

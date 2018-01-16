@@ -218,8 +218,8 @@
                     <connections>
                         <outlet property="activityPicker" destination="z8w-Sd-SuD" id="YQ1-WF-sG9"/>
                         <outlet property="datePicker" destination="4Cc-WQ-0jF" id="LNE-zu-qFf"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="shakePage" id="Wmz-GY-lqP"/>
-                        <segue destination="2YU-kp-PTL" kind="show" identifier="walkPage" id="VsS-81-9Mn"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="shakePage" id="Wmz-GY-lqP"/>
+                        <segue destination="2YU-kp-PTL" kind="presentation" identifier="walkPage" id="VsS-81-9Mn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sph-iA-cWb" userLabel="First Responder" sceneMemberID="firstResponder"/>

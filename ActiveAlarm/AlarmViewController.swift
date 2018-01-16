@@ -11,16 +11,16 @@ import UserNotifications
 
 
 
-class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, UIPickerViewDelegate, UIPickerViewDataSource, TurnAlarmOff {
     
  
     let content = UNMutableNotificationContent()
     var dateComponents = DateComponents()
     var pickerData = ["Shake", "Walk"]
     var selectedActivity: String = ""
+    var alarmOff = false
 
-    var switchView = "Walk"
-    var shakePageVC = ViewController()
+    var switchView = "walk"
     private var notification: NSObjectProtocol?
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -30,6 +30,14 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerLocal()
+        
+        if switchView == "shake" {
+            performSegue(withIdentifier: "shakePage", sender: nil)
+            print("test")
+        } else if switchView == "walk" {
+            performSegue(withIdentifier: "walkPage", sender: self)
+        }
+      
         UNUserNotificationCenter.current().delegate = self
         self.activityPicker.delegate = self
         self.activityPicker.dataSource = self
@@ -128,6 +136,7 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
             
             let shakeVC = segue.destination as! ViewController
             shakeVC.passedInFromAlarm = "I'm from the alarm page"
+            shakeVC.delegate = self
             
         }
         else if segue.identifier == "walkPage" {
@@ -136,6 +145,13 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
             walkVC.passedInFromAlarm = "Woohoo!"
             
         }
+    }
+    
+    func AlarmOff(yesOrNo: Bool) {
+        // This function is needed to conform to the protocol TurnAlarmOff
+        // as defined in ViewController and pedometerViewController
+        self.alarmOff = true
+        print("alarmOff is set to true")
     }
 
     /*
