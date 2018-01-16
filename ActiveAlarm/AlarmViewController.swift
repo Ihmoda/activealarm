@@ -15,6 +15,8 @@ class AlarmViewController: UIViewController {
     let content = UNMutableNotificationContent()
     var dateComponents = DateComponents()
     
+    private var notification: NSObjectProtocol?
+    
     
     @IBOutlet weak var amPMSwitch: UISwitch!
     
@@ -28,8 +30,18 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         self.registerLocal()
         
+        notification = NotificationCenter.default.addObserver(forName: .UIApplicationWillEnterForeground, object: nil, queue: .main) {
+            [unowned self] notification in
+            print("Notification Received")
+        }
         // Do any additional setup after loading the view.
     }
+        
+        deinit {
+            if let notification = notification {
+                NotificationCenter.default.removeObserver(notification)
+            }
+        }
     
     func setAlarm(){
         print("setAlarm")
