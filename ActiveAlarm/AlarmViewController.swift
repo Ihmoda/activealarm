@@ -10,17 +10,18 @@ import UIKit
 import UserNotifications
 
 
-
 class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, UIPickerViewDelegate, UIPickerViewDataSource, TurnAlarmOff {
     
  
     let content = UNMutableNotificationContent()
     var dateComponents = DateComponents()
+    var dateComponents2 = DateComponents()
     var pickerData = ["Shake", "Walk"]
     var selectedActivity: String = ""
     var alarmOff = false
+    var identifier: String = ""
 
-    var switchView = "walk"
+    var switchView = "Walk"
     private var notification: NSObjectProtocol?
     
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -30,14 +31,7 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     override func viewDidLoad() {
         super.viewDidLoad()
         self.registerLocal()
-        
-        if switchView == "shake" {
-            performSegue(withIdentifier: "shakePage", sender: nil)
-            print("test")
-        } else if switchView == "walk" {
-            performSegue(withIdentifier: "walkPage", sender: self)
-        }
-      
+    
         UNUserNotificationCenter.current().delegate = self
         self.activityPicker.delegate = self
         self.activityPicker.dataSource = self
@@ -69,16 +63,38 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
         print("setAlarm")
         let content = UNMutableNotificationContent()
         content.title = NSString.localizedUserNotificationString(forKey:
-            "Hello!", arguments: nil)
+            "Active Alarm", arguments: nil)
         content.body = NSString.localizedUserNotificationString(forKey:
-            "Hello_message_body", arguments: nil)
+            "Rise and Shine", arguments: nil)
         
         // Deliver the notification at specified time
         content.sound = UNNotificationSound(named: "analog_watch.wav")
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         
         // Schedule the notification.
-        let request = UNNotificationRequest(identifier: self.selectedActivity, content: content, trigger: trigger)
+        self.identifier = "\(self.selectedActivity) 1"
+        print(self.identifier)
+        let request = UNNotificationRequest(identifier: self.identifier, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        center.add(request, withCompletionHandler: nil)
+    }
+    
+    func setAlarm2(){
+        print("setAlarm")
+        let content = UNMutableNotificationContent()
+        content.title = NSString.localizedUserNotificationString(forKey:
+            "Active Alarm", arguments: nil)
+        content.body = NSString.localizedUserNotificationString(forKey:
+            "Rise and Shine", arguments: nil)
+        
+        // Deliver the notification at specified time
+        content.sound = UNNotificationSound(named: "analog_watch.wav")
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents2, repeats: true)
+        
+        // Schedule the notification.
+        self.identifier = "\(self.selectedActivity) 2"
+        print(self.identifier)
+        let request = UNNotificationRequest(identifier: self.identifier, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(request, withCompletionHandler: nil)
     }
@@ -92,10 +108,9 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         self.switchView = response.notification.request.identifier
-        print(response.notification.request.identifier)
-        if switchView == "Shake" {
+        if switchView.contains("Shake") {
             performSegue(withIdentifier: "shakePage", sender: nil)
-        } else if switchView == "Walk" {
+        } else if switchView.contains("Walk") {
             performSegue(withIdentifier: "walkPage", sender: self)
         }
         
@@ -127,8 +142,11 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
 
        dateComponents.hour = hour
        dateComponents.minute = minute
+       dateComponents2.hour = hour
+       dateComponents2.minute = minute + 1
         
        self.setAlarm()
+       self.setAlarm2()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -151,7 +169,8 @@ class AlarmViewController: UIViewController, UNUserNotificationCenterDelegate, U
         // This function is needed to conform to the protocol TurnAlarmOff
         // as defined in ViewController and pedometerViewController
         self.alarmOff = true
-        print("alarmOff is set to true")
+        
+    UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
     }
 
     /*
