@@ -45,7 +45,7 @@ class pedometerViewController: UIViewController {
     }
     
     func checkIfRequirementMet() {
-        if numberOfSteps == 30 {
+        if numberOfSteps >= 30 {
             delegate?.AlarmOff(yesOrNo: true)
             self.numberOfSteps = 0
             dismiss(animated: true, completion: nil)
