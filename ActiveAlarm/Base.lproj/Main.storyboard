@@ -168,66 +168,85 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sau-vo-qRr">
-                                <rect key="frame" x="0.0" y="475" width="375" height="192"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sau-vo-qRr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rnb-bz-8vS">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-Wu-UNu">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLe-0Q-pSa">
-                                        <rect key="frame" x="0.0" y="50.5" width="375" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRB-tG-rFT">
-                                        <rect key="frame" x="0.0" y="80.5" width="375" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-w8-yOZ">
-                                        <rect key="frame" x="0.0" y="101" width="375" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-5X-PXL">
-                                        <rect key="frame" x="0.0" y="131" width="375" height="31"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfx-6a-C2i">
-                                                <rect key="frame" x="0.0" y="0.0" width="125" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-IX-SI3">
-                                                <rect key="frame" x="125" y="0.0" width="127" height="31"/>
-                                            </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-HX-1hA">
-                                                <rect key="frame" x="250" y="0.0" width="125" height="31"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-ec-bLT">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="323.5"/>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-Fp-rH9">
-                                        <rect key="frame" x="0.0" y="162" width="375" height="30"/>
-                                        <state key="normal" title="Set Alarm"/>
-                                        <connections>
-                                            <action selector="setAlarmPressed:" destination="P8Z-eG-UTK" eventType="touchUpInside" id="biN-En-aUK"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Wb9-Zi-grg">
+                                        <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q31-jd-mZo">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="2OK-kb-FkN"/>
+                                                </constraints>
+                                            </stackView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter hour" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ACd-Wu-UNu">
+                                                <rect key="frame" x="0.0" y="63" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gLe-0Q-pSa">
+                                                <rect key="frame" x="0.0" y="90.5" width="375" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Minute" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GRB-tG-rFT">
+                                                <rect key="frame" x="0.0" y="127.5" width="375" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-w8-yOZ">
+                                                <rect key="frame" x="0.0" y="155.5" width="375" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="V5K-5X-PXL">
+                                                <rect key="frame" x="0.0" y="192.5" width="375" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfx-6a-C2i">
+                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XDt-IX-SI3">
+                                                        <rect key="frame" x="125" y="0.0" width="127" height="31"/>
+                                                    </switch>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4cg-HX-1hA">
+                                                        <rect key="frame" x="250" y="0.0" width="125" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-Fp-rH9">
+                                                <rect key="frame" x="0.0" y="230.5" width="375" height="30"/>
+                                                <state key="normal" title="Set Alarm"/>
+                                                <connections>
+                                                    <action selector="setAlarmPressed:" destination="P8Z-eG-UTK" eventType="touchUpInside" id="biN-En-aUK"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="R0Z-lQ-gso">
+                                                <rect key="frame" x="0.0" y="267.5" width="375" height="56"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="56" id="U23-Kc-r5X"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="R0Z-lQ-gso" secondAttribute="bottom" id="MsD-TF-Mo2"/>
+                                            <constraint firstItem="R0Z-lQ-gso" firstAttribute="leading" secondItem="Wb9-Zi-grg" secondAttribute="leading" id="Zn5-Hh-Z2g"/>
+                                            <constraint firstAttribute="trailing" secondItem="R0Z-lQ-gso" secondAttribute="trailing" id="lwL-kN-a8w"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -235,11 +254,15 @@
                         <constraints>
                             <constraint firstItem="sau-vo-qRr" firstAttribute="bottom" secondItem="HuV-ws-8mS" secondAttribute="bottom" id="2sl-kA-qpz"/>
                             <constraint firstItem="sau-vo-qRr" firstAttribute="trailing" secondItem="HuV-ws-8mS" secondAttribute="trailing" id="3uQ-wc-7Ke"/>
+                            <constraint firstItem="sau-vo-qRr" firstAttribute="trailing" secondItem="HuV-ws-8mS" secondAttribute="trailing" id="8wn-3t-L28"/>
+                            <constraint firstItem="sau-vo-qRr" firstAttribute="top" secondItem="HuV-ws-8mS" secondAttribute="top" id="E26-Lc-1gQ"/>
                             <constraint firstItem="DCo-li-SMC" firstAttribute="top" secondItem="T9G-1h-QSz" secondAttribute="top" id="NWw-v8-ntr"/>
+                            <constraint firstItem="sau-vo-qRr" firstAttribute="bottom" secondItem="HuV-ws-8mS" secondAttribute="bottom" id="aAU-iD-ukv"/>
                             <constraint firstItem="DCo-li-SMC" firstAttribute="leading" secondItem="HuV-ws-8mS" secondAttribute="leading" id="b6r-dk-ofP"/>
                             <constraint firstItem="sau-vo-qRr" firstAttribute="leading" secondItem="HuV-ws-8mS" secondAttribute="leading" id="e3e-qN-teL"/>
                             <constraint firstItem="DCo-li-SMC" firstAttribute="trailing" secondItem="HuV-ws-8mS" secondAttribute="trailing" id="h8a-5f-Z3a"/>
                             <constraint firstItem="DCo-li-SMC" firstAttribute="bottom" secondItem="HuV-ws-8mS" secondAttribute="bottom" id="xhT-Gt-Jbj"/>
+                            <constraint firstItem="sau-vo-qRr" firstAttribute="leading" secondItem="HuV-ws-8mS" secondAttribute="leading" id="yLW-gJ-FqL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HuV-ws-8mS"/>
                     </view>
@@ -252,6 +275,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sph-iA-cWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1808.8" y="116.49175412293854"/>
+        </scene>
+        <!--Squat View Controller-->
+        <scene sceneID="HpX-HO-50y">
+            <objects>
+                <viewController id="bNT-of-XaS" customClass="SquatViewController" customModule="ActiveAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k9X-sg-byL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fSN-MZ-VB6"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f5F-0Z-EXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2614" y="117"/>
         </scene>
     </scenes>
     <resources>
