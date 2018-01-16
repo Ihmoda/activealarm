@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     
     func checkIfRequirementMet() {
         // Dismissed view after a certain number of shakes
-        if counter == 30 {
+        if counter >= 30 {
             delegate?.AlarmOff(yesOrNo: true)
             self.counter = 0
             dismiss(animated: true, completion: nil)
