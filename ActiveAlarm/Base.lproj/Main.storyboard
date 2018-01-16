@@ -80,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820" y="116"/>
+            <point key="canvasLocation" x="1617" y="629"/>
         </scene>
         <!--Pedometer View Controller-->
         <scene sceneID="S6K-Zm-V4a">
@@ -137,7 +137,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASz-jR-lMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1360.8" y="115.59220389805098"/>
+            <point key="canvasLocation" x="1617" y="-77"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="kPg-VZ-77s">
@@ -178,13 +178,16 @@
                                         <rect key="frame" x="0.0" y="301.5" width="375" height="301.5"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-WQ-0jF">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="259.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="138"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="537756956.06434798">
                                                     <!--2018-01-16 00:55:56 +0000-->
                                                 </date>
                                             </datePicker>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Sd-SuD">
+                                                <rect key="frame" x="0.0" y="143" width="375" height="138"/>
+                                            </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-Fp-rH9">
-                                                <rect key="frame" x="0.0" y="264.5" width="375" height="37"/>
+                                                <rect key="frame" x="0.0" y="286" width="375" height="15.5"/>
                                                 <state key="normal" title="Set Alarm"/>
                                                 <connections>
                                                     <action selector="setAlarmPressed:" destination="P8Z-eG-UTK" eventType="touchUpInside" id="biN-En-aUK"/>
@@ -213,6 +216,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="TXz-uW-u47"/>
                     <connections>
+                        <outlet property="activityPicker" destination="z8w-Sd-SuD" id="YQ1-WF-sG9"/>
                         <outlet property="datePicker" destination="4Cc-WQ-0jF" id="LNE-zu-qFf"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="shakePage" id="Wmz-GY-lqP"/>
                         <segue destination="2YU-kp-PTL" kind="presentation" identifier="walkPage" id="VsS-81-9Mn"/>
@@ -235,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f5F-0Z-EXQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1964" y="116.49175412293854"/>
+            <point key="canvasLocation" x="2930" y="30"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="51l-1a-gBg">
@@ -253,7 +257,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5lq-Vf-O05" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="844"/>
+            <point key="canvasLocation" x="-342" y="116"/>
         </scene>
     </scenes>
     <resources>
