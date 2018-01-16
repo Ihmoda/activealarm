@@ -178,13 +178,16 @@
                                         <rect key="frame" x="0.0" y="323.5" width="375" height="323.5"/>
                                         <subviews>
                                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Cc-WQ-0jF">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="278.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                                                 <date key="date" timeIntervalSinceReferenceDate="537756956.06434798">
                                                     <!--2018-01-16 00:55:56 +0000-->
                                                 </date>
                                             </datePicker>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z8w-Sd-SuD">
+                                                <rect key="frame" x="0.0" y="153" width="375" height="148"/>
+                                            </pickerView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMq-Fp-rH9">
-                                                <rect key="frame" x="0.0" y="283.5" width="375" height="40"/>
+                                                <rect key="frame" x="0.0" y="306" width="375" height="17.5"/>
                                                 <state key="normal" title="Set Alarm"/>
                                                 <connections>
                                                     <action selector="setAlarmPressed:" destination="P8Z-eG-UTK" eventType="touchUpInside" id="biN-En-aUK"/>
@@ -212,6 +215,7 @@
                         <viewLayoutGuide key="safeArea" id="HuV-ws-8mS"/>
                     </view>
                     <connections>
+                        <outlet property="activityPicker" destination="z8w-Sd-SuD" id="YQ1-WF-sG9"/>
                         <outlet property="datePicker" destination="4Cc-WQ-0jF" id="LNE-zu-qFf"/>
                     </connections>
                 </viewController>
